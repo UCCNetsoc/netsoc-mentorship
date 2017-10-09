@@ -6,6 +6,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 
 </head>
@@ -19,8 +20,8 @@
 			<div class="nav-wrapper #ff7043 deep-orange lighten-1" style="padding-right: 5%;padding-left: 1%">
 				<div class="brand-logo"><img src="../assets/icon_white.png" class="responsive-img" style="height: 65px; padding: 5px;"></div>
 
-
 				<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+
 				<ul class="right hide-on-med-and-down">
 					<li>
 						<a href="https://netsoc.co/">Netsoc Home</a>
@@ -32,7 +33,6 @@
 						<a href="https://admin.netsoc.co/">Netsoc Admin Tools</a>
 					</li>
 				</ul>
-
 
 				<ul class="side-nav" id="mobile-demo" style="left: -250px;">
 					<li>
@@ -48,22 +48,14 @@
 			</div>
 		</nav>
 
-    <!--<nav>-->
-    <!--<div class="nav-wrapper #ff7043 deep-orange lighten-1">-->
-      <!--<a href="#" class="brand-logo">Logo</a>-->
-      <!--<ul id="nav-mobile" class="right hide-on-med-and-down">-->
-        <!--<li><a href="sass.html">Sass</a></li>-->
-        <!--<li><a href="badges.html">Components</a></li>-->
-        <!--<li><a href="collapsible.html">JavaScript</a></li>-->
-      <!--</ul>-->
-    <!--</div>-->
-  <!--</nav>-->
-
     <br>
     <div id="banner" class="container z-depth-3 #ff8a65 deep-orange lighten-2">
 
         <div class="row valign-wrapper">
-            <img class="col s10 m4 l3" src="../assets/icon_white.png">
+
+            <!--Banner with site description and Netsoc Logo-->
+            <img class="col s12 m4 l3" src="../assets/icon_white.png">
+
             <div class="col s12 m6 l7">
                 <div class="card">
 
@@ -73,10 +65,12 @@
                     <br>
                     <p>Each Project will be assigned a project mentor that will guide students through development. If you feel that you have an interesting project in mind, and would like to be a mentor make sure to send us a mentorship application! :)</p>
                 </div>
+
                 <div class="card-action">
-                  <a href="#projects">Go To Projects</a>
+                  <a href="#projects-title">Go To Projects</a>
                   <a href="#">Apply For Mentorship</a>
                 </div>
+
               </div>
             </div>
             <div class="col s0 m0 l1"></div>
@@ -84,54 +78,171 @@
         </div>
     </div>
 
+    <!--Start of projects section-->
     <div id="projects-title" class="container center-align z-depth-3 #ff8a65 deep-orange lighten-2">
-
         <h1 class="white-text">Projects</h1>
-
     </div>
 
+    <!--Projects are contained inside container divs with ids of "project-{project-id***REMOVED***"-->
     <div id="project-1" class="container center-align z-depth-3 #ff8a65 deep-orange lighten-2">
 
         <br>
         <div class="col s12 m7 container">
             <div class="card horizontal">
-              <div class="project title">
-              </div>
-              <div class="card-stacked">
-                <div class="card-content">
-                    <h4>Yik Yak Clone</h4>
-                    <h5>Mentor: Hassan Baker</h5>
-                    <p><b>Description:</b> The aim is to Build a yik yak clone web app for UCC students.
-                        UCC students will need to be authenticated using their {student-id***REMOVED***@ucc.umail.ie email, however user details must be completely encrypted so as to make the service as anonymous as possible.
-                        Users must be able to access the site from both desktop and mobile, so a mobile first design will be encourged.
-                    </p>
-                    <h5>Learning Outcomes: </h5>
-                    <ul class="collection">
-                        <li class="collection-item">Python/Flask</li>
-                        <li class="collection-item">Git</li>
-                        <li class="collection-item">Materialize</li>
-                        <li class="collection-item">A database system to be decided</li>
-                    </ul>
-                    <h5>Requirments: </h5>
-                    <ul class="collection">
-                        <li class="collection-item">A knowledge of Python</li>
-                        <li class="collection-item">Willingess to learn new things</li>
-                        <li class="collection-item">Willingness to work</li>
-                    </ul>
+                <div class="project title">
                 </div>
-                <div class="card-action">
-                  <a class="waves-effect waves-light btn-large cyan lighten-2">Apply</a>
+                <div class="card-stacked">
+                    <div class="card-content">
+                        <!--Project Title-->
+                        <h4>Yik Yak Clone</h4>
+                        <!--Project Mentor-->
+                        <h5>Mentor: Hassan Baker</h5>
+                        <!--Project Description-->
+                        <p><b>Description:</b> The aim is to Build a yik yak clone web app for UCC students.
+                            UCC students will need to be authenticated using their {student-id***REMOVED***@ucc.umail.ie email, however user details must be completely encrypted so as to make the service as anonymous as possible.
+                            Users must be able to access the site from both desktop and mobile, so a mobile first design will be encourged.
+                        </p>
+                        <!--Learning outcomes list-->
+                        <h5>Learning Outcomes: </h5>
+                        <ul class="collection">
+                            <li class="collection-item">Python/Flask</li>
+                            <li class="collection-item">Git</li>
+                            <li class="collection-item">Materialize</li>
+                            <li class="collection-item">A database system to be decided</li>
+                        </ul>
+                        <!--List of requirments on undertaking the project in question-->
+                        <h5>Requirments: </h5>
+                        <ul class="collection">
+                            <li class="collection-item">A knowledge of Python</li>
+                            <li class="collection-item">Willingess to learn new things</li>
+                            <li class="collection-item">Willingness to work</li>
+                        </ul>
+                    </div>
+
+                    <!--Applying to this project should reveal it's application card-->
+                    <div class="card-content">
+                        <span class="activator">
+                            <a class="waves-effect waves-light btn-large activator cyan lighten-2">Apply</a>
+                        </span>
+                    </div>
                 </div>
-              </div>
+
+                <!--Form for applying the project-->
+                <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4">Application For Yik Yak Clone Project<i class="material-icons right">close</i></span>
+                    <p>Great to see you're interested in this project. Try to be as descritive as possible in the cover letter. i.e Tell us what course you're studying and what year you're in, why you're interested in this project, and what your experience is.</p>
+                    <p>P.S. Don't be intimidated if you feel that you don't have any experience. We were all there once. :)</p>
+                    <p>Please fill out this form.</p>
+
+                    <div class="row">
+                        <form class="col s12">
+
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <input id="app-first-name" type="text" class="validate">
+                                    <label for="app-first-name">First Name</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <input id="app-last-name" type="text" class="validate">
+                                    <label for="mentor-last-name">Last Name</label>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input id="app-email" type="email" class="validate">
+                                    <label for="mentor-email">Email</label>
+                                </div>
+                            </div>
+
+                            <div class="row" hidden>
+                                <div class="input-field col s12">
+                                    <input id="project-id" type="text" class="validate" value="0">
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <textarea id="cover-letter" class="materialize-textarea" data-length="500"></textarea>
+                                    <label for="cover-letter">Cover Letter</label>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                  <button class="btn waves-effect waves-light cyan lighten-2" type="submit" name="action">Submit
+                                      <i class="material-icons right">send</i>
+                                  </button>
+                            </div>
+
+                        </form>
+                    </div>
+
+                </div>
+
             </div>
           </div>
         <br>
-
-
     </div>
 
+    <!--Start of mentorship section-->
+    <div id="mentorship-title" class="container center-align z-depth-3 #ff8a65 deep-orange lighten-2">
+        <h1 class="white-text">Mentorship</h1>
+        <h5 class="center-align white-text">If you are interested in mentoring and have a project in mind,
+            please fill out this form. We will get in touch with you as soon as possible</h5>
+    </div>
 
+    <!--Form for submitting a mentorship proposal-->
+    <div id="mentorship-application" class="container center-align z-depth-3 #ff8a65 deep-orange lighten-2">
+        <br>
+        <div class="col s12 m7 container white">
 
+            <div class="row">
+                <form class="col s12">
+
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input id="mentor-first-name" type="text" class="validate">
+                            <label for="fmentor-first-name">First Name</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="mentor-last-name" type="text" class="validate">
+                            <label for="mentor-last-name">Last Name</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="mentor-email" type="email" class="validate">
+                            <label for="mentor-email">Email</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="mentor-project-title" type="text" class="validate">
+                            <label for="mentor-project-title">Project Title</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <textarea id="mentor-project-description" class="materialize-textarea" data-length="300"></textarea>
+                            <label for="mentor-project-description">Project Description</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                          <button class="btn waves-effect waves-light cyan lighten-2" type="submit" name="action">Submit
+                              <i class="material-icons right">send</i>
+                          </button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+        <br>
+
+    </div>
 
 </body>
 </html>
