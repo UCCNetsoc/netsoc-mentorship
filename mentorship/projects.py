@@ -10,7 +10,7 @@ class Project:
 
     public_information  = {***REMOVED***
 
-    def __init__(self, project_id, title, mentor_name, description, learning_outcomes, requirments, mentor_email):
+    def __init__(self, project_id, title, mentor_name, description, learning_outcomes, requirements, mentor_email):
         """
         :param project_id:
         :param title:
@@ -27,8 +27,8 @@ class Project:
             "title"             : title,
             "mentor_name"       : mentor_name,
             "description"       : description,
-            "learning_outcomes" : learning_outcomes,
-            "requirements"      : requirements
+            "learning_outcomes" : learning_outcomes.split(","),
+            "requirements"      : requirements.split(",")
         ***REMOVED***
         self._mentor_email      = mentor_email
 
@@ -37,9 +37,9 @@ class Project:
         A minimal string represenatation of the project object; will be used for logging
         :return:
         """
-        return_string = "Project: {project_id***REMOVED***-{name***REMOVED***".\
+        return_string = "Project: {***REMOVED***-{***REMOVED***".\
             format(self.public_information["project_id"],
-                   self.public_information["name"])
+                   self.public_information["title"])
 
         return return_string
 
@@ -49,8 +49,107 @@ class Project:
         """
         return self.public_information
 
+    def get_id(self):
+        return self.public_information["project_id"]
+
     def get_mentor_email(self):
         """
         :return: the mentors email
         """
         return self._mentor_email
+
+
+class Projects_Factory:
+    """
+    Class that will be used to read project files, generate project objects,
+    and store the project objects in a list, and sorts in order of largest id to smallest id.
+    (Reverse sorting means that the project created last will appear first on the site).
+
+    This class reads project files following the .ini format and whos extension is .project
+    """
+
+    _directory = None
+    projects = []
+    _filenames = []
+
+    def __init__(self, directory):
+        self._directory = directory
+        self.update_projects()
+
+    def __str__(self):
+        """
+        Returns the directory and size of projects list as a string;
+        Good for logging.
+        :return:
+        """
+        string = """
+                Project Factory:\n
+                Directory: {***REMOVED***\n
+                Size: {***REMOVED***\n
+                """.format(self._directory, len(self.projects))
+        return string
+
+    def _read_project(self, filename):
+        """
+        Reads a specific project given a filename using the config parser.
+        :param filename:
+        :return: a configparser object, to be treated like a dictionary.
+        """
+        parser = configparser.ConfigParser()
+        parser.read(filename, "utf8")
+        return parser
+
+    def _make_project(self, project_dict):
+        """
+        :param project_dict:
+        :return: a Project object
+        """
+        project = Project(project_id=project_dict["public"]["project_id"],
+                          title=project_dict["public"]["project_title"],
+                          mentor_name=project_dict["public"]["mentor_name"],
+                          description=project_dict["public"]["description"],
+                          learning_outcomes=project_dict["public"]["learning_outcomes"],
+                          requirements=project_dict["public"]["requirements"],
+                          mentor_email=project_dict["private"]["mentor_email"])
+        return project
+
+    def _read_directory(self):
+        """
+        Reads all files in the directory with the .project extension.
+        :return:
+        """
+        self._filenames = glob.glob(self._directory + "/*.project")
+
+    def update_projects(self):
+        """
+        Updates the list of projects with Project objects and sorts in reverse order.
+        :return:
+        """
+        self._read_directory()
+        for filename in self._filenames:
+            project = self._make_project(self._read_project(filename))
+            self.projects.append(
+                (int(project.get_id()), project)
+            )
+        self.projects = sorted(self.projects, reverse=True)
+
+    def get_projects(self):
+        """
+        :return: The list of Projects
+        """
+        return self.projects
+
+
+def test():
+    """
+    Tests Project_Factory and Project classes
+    :return:
+    """
+    project_factory = Projects_Factory("resources/projects")
+    projects = project_factory.get_projects()
+    print("Factory: ", str(project_factory), "\n",
+          "Projects List: ", projects, "\n",
+          "Project: ", str(projects[0][1]),"\n",
+          "Project Info: ", projects[0][1].get_project_information(), "\n",
+          "Mentors Email: ", projects[0][1].get_mentor_email()
+          )
