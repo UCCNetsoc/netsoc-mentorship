@@ -141,12 +141,11 @@ class Projects_Factory:
 
 
 def test():
-    import config
     """
     Tests Project_Factory and Project classes
     :return:
     """
-    project_factory = Projects_Factory(config.projects_directory)
+    project_factory = Projects_Factory("resources/projects")
     projects = project_factory.get_projects()
     print("Factory: ", str(project_factory), "\n",
           "Projects List: ", projects, "\n",
