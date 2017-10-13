@@ -1,3 +1,5 @@
 .idea/
-mentorship/config.py
+src/mentorship/config.py
 __pycache__/
+src/resources/projects/*.project
+!src/resources/projects/0.project.example
