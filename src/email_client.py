@@ -3,7 +3,7 @@ from sendgrid.helpers.mail import Content, Mail, Personalization
 
 class Email_Client:
     """
-    An email client for sending project applications to mentors and mentorship applications to the admin email.
+    An email client for sending project applications to mentors and src applications to the admin email.
     Uses the sendgrid API.
     """
 
@@ -43,7 +43,7 @@ class Email_Client:
 
     def create_mentorship_proposal_email(self, first_name, last_name, applicants_email, title, description):
         """
-        Creates a mentorship proposal subject and body
+        Creates a src proposal subject and body
         :param first_name:
         :param last_name:
         :param applicants_email:
@@ -88,4 +88,4 @@ def test():
     print("Project Application\n"
           "Subject: ", subject, "\n"
           "Message: ", message, "\n")
-    client.send_email(subject, message, recipients=["<insert your email here>"])
+    client.send_email(subject, message, recipients=["114499092@umail.ucc.ie"])

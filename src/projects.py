@@ -133,12 +133,16 @@ class Projects_Factory:
             )
         self.projects = sorted(self.projects, reverse=True)
 
-    def get_projects(self):
+    def get_projects_as_dicts(self):
         """
         :return: The list of Projects
         """
-        return self.projects
+        return [ _project[1].get_project_information() for _project in self.projects ]
 
+    def get_project_by_id(self, project_id):
+        for project in self.projects:
+            if project[0] == int(project_id):
+                return project[1]
 
 def test():
     import config
