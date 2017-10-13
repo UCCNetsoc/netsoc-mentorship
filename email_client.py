@@ -14,7 +14,6 @@ class Email_Client:
     def __init__(self, sendgrid_key, sender_email, admin_email):
         """
         Initiated with the sendgrid API key, a list of recipients, and the admins email, as well as the sender email.
-        :param recipients:
         :param sendgrid_key:
         :param sender_email:
         :param admin_email:
@@ -63,9 +62,9 @@ class Email_Client:
     def send_email(self, subject, message_body, recipients=[]):
         """
         Sends an email using the send grid API
+        :param recipients:
         :param subject:
         :param message_body:
-        :param additional_emails:
         :return:
         """
         content = Content("text/plain", message_body)
@@ -88,4 +87,4 @@ def test():
     print("Project Application\n"
           "Subject: ", subject, "\n"
           "Message: ", message, "\n")
-    client.send_email(subject, message, recipients=["114499092@umail.ucc.ie"])
+    client.send_email(subject, message, recipients=["<insert_email>"])

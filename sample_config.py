@@ -4,4 +4,10 @@
     "Admin_Email"       : ""
 ***REMOVED***
 
-projects_directory = "resources/projects"
+***REMOVED***
+
+***REMOVED***
+***REMOVED***
+***REMOVED***
+***REMOVED***
+***REMOVED***

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %***REMOVED***
+    <meta charset="UTF-8">
+    <title>Netsoc-Projects</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='assets/netsoc.png') ***REMOVED******REMOVED***" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    {% endblock %***REMOVED***
+</head>
+<body class="#4dd0e1 cyan lighten-2">
+    {% block body %***REMOVED***
+    <nav class="nav-extended">
+        <div class="nav-wrapper #ff7043 deep-orange lighten-1" style="padding-right: 5%;padding-left: 1%">
+            <div class="brand-logo"><img src="{{ url_for('static', filename='assets/icon_white.png') ***REMOVED******REMOVED***" class="responsive-img" style="height: 65px; padding: 5px;"></div>
+            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li>
+                    <a href="https://admin.netsoc.co/">Netsoc Admin Tools</a>
+                </li>
+                <li>
+                    <a href="https://admin.netsoc.co/tutorials">Tutorials</a>
+                </li>
+                <li>
+                    <a href="https://netsoc.co/">Netsoc Home</a>
+                </li>
+            </ul>
+            <ul class="side-nav" id="mobile-demo">
+                <li>
+                    <a href="https://admin.netsoc.co/">Netsoc Admin Tools</a>
+                </li>
+                <li>
+                    <a href="https://admin.netsoc.co/tutorials">Tutorials</a>
+                </li>
+                <li>
+                    <a href="https://netsoc.co/">Netsoc Home</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <br>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    {% endblock %***REMOVED***
+</body>
+</html>
