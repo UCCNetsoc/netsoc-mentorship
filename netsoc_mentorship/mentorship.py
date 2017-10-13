@@ -1,8 +1,8 @@
 from flask import Flask
 from flask import render_template, request
-from projects import Projects_Factory, Project
-from email_client import Email_Client
-import config
+from netsoc_mentorship.projects import Projects_Factory, Project
+from netsoc_mentorship.email_client import Email_Client
+import netsoc_mentorship.config as config
 
 app = Flask(__name__)
 
@@ -22,7 +22,7 @@ def home():
 def projects_proposal():
     form = request.form
     project = projects_factory.get_project_by_id(form["project_id"])
-    subject, body =  email_client.create_project_application_email(first_name=form["app_first_name"],
+    subject, body = email_client.create_project_application_email(first_name=form["app_first_name"],
                                                   last_name=form["app_last_name"],
                                                   applicants_email=form["app_email"],
                                                   cover_letter=form["cover_letter"],
@@ -40,7 +40,7 @@ def projects_proposal():
     return render_template("submission.html", RESPONSE_MESSAGE=response_message)
 
 
-@app.route("/src-proposal", methods=["POST"])
+@app.route("/netsoc_mentorship-proposal", methods=["POST"])
 def mentorship_propasal():
     form = request.form
     subject, body = email_client.create_mentorship_proposal_email(first_name=form["mentor_first_name"],
