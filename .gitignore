@@ -1,5 +1,6 @@
 .idea/
-netsoc_mentorship/mentorship/config.py
+config.py
+/netsoc_mentorship_service.egg-info
 __pycache__/
-netsoc_mentorship/resources/projects/*.project
-!netsoc_mentorship/resources/projects/0.project.example
+static/projects/*.project
+!static/projects/0.project.example
