@@ -1,10 +1,10 @@
-***REMOVED***
-project_id={some integer, also filename***REMOVED***
-project_title={some tx`x itle***REMOVED***
-mentor_name={first and last name of mentor***REMOVED***
-description={project description***REMOVED***
-learning_outcomes={comma separated list***REMOVED***
-requirements={comma separated list***REMOVED***
+[public]
+project_id={some integer, also filename}
+project_title={some tx`x itle}
+mentor_name={first and last name of mentor}
+description={project description}
+learning_outcomes={comma separated list}
+requirements={comma separated list}
 
-***REMOVED***
-mentor_email={email***REMOVED***
+[private]
+mentor_email={email}

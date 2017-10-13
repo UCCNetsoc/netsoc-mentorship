@@ -34,10 +34,10 @@ class Email_Client:
         """
         subject = project_title
         message_body = """
-                Applicants Name: {***REMOVED*** {***REMOVED***\n
-                Applicants Email: {***REMOVED***\n
-                Applying for {***REMOVED***\n\n
-                Cover Letter: {***REMOVED***""".format(first_name, last_name, applicants_email, project_title, cover_letter)
+                Applicants Name: {} {}\n
+                Applicants Email: {}\n
+                Applying for {}\n\n
+                Cover Letter: {}""".format(first_name, last_name, applicants_email, project_title, cover_letter)
         return subject, message_body
 
     def create_mentorship_proposal_email(self, first_name, last_name, applicants_email, title, description):
@@ -50,12 +50,12 @@ class Email_Client:
         :param description:
         :return:
         """
-        subject = "Mentorship Application: {***REMOVED***".format(title)
+        subject = "Mentorship Application: {}".format(title)
         message_body = """
-                Name:   {***REMOVED*** {***REMOVED***\n
-                Email:  {***REMOVED***\n\n
-                Project Title:  {***REMOVED***\n
-                Description:    {***REMOVED***
+                Name:   {} {}\n
+                Email:  {}\n\n
+                Project Title:  {}\n
+                Description:    {}
                 """.format(first_name, last_name, applicants_email, title, description)
         return subject, message_body
 

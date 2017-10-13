@@ -8,7 +8,7 @@ class Project:
     """
     _mentor_email       = None
 
-    public_information  = {***REMOVED***
+    public_information  = {}
 
     def __init__(self, project_id, title, mentor_name, description, learning_outcomes, requirements, mentor_email):
         """
@@ -29,7 +29,7 @@ class Project:
             "description"       : description,
             "learning_outcomes" : learning_outcomes.split(","),
             "requirements"      : requirements.split(",")
-        ***REMOVED***
+        }
         self._mentor_email      = mentor_email
 
     def __str__(self):
@@ -37,7 +37,7 @@ class Project:
         A minimal string represenatation of the project object; will be used for logging
         :return:
         """
-        return_string = "Project: {***REMOVED***-{***REMOVED***".\
+        return_string = "Project: {}-{}".\
             format(self.public_information["project_id"],
                    self.public_information["title"])
 
@@ -84,8 +84,8 @@ class Projects_Factory:
         """
         string = """
                 Project Factory:\n
-                Directory: {***REMOVED***\n
-                Size: {***REMOVED***\n
+                Directory: {}\n
+                Size: {}\n
                 """.format(self._directory, len(self.projects))
         return string
 

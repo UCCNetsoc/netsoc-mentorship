@@ -1,10 +1,10 @@
-{% extends "base.html" %***REMOVED***
-{% block body %***REMOVED***
-    {{ super() ***REMOVED******REMOVED***
+{% extends "base.html" %}
+{% block body %}
+    {{ super() }}
     <div class="row valign-wrapper">
         <div id="banner" class="container z-depth-3 #ff8a65 deep-orange lighten-2">
             <!--Banner with site description and Netsoc Logo-->
-            <img class="container-item col s12 m12 l5" src="{{ url_for('static', filename='assets/icon_white.png') ***REMOVED******REMOVED***">
+            <img class="container-item col s12 m12 l5" src="{{ url_for('static', filename='assets/icon_white.png') }}">
             <div class="container-item col s12 m12 l7">
                 <div class="card">
                     <div class="card-content black-text">
@@ -30,9 +30,9 @@
         <h1 class="white-text">Projects</h1>
     </div>
 
-    {% for project in PROJECTS %***REMOVED***
-    <!--Projects are contained inside container divs with ids of "project-{project-id***REMOVED***"-->
-    <div id="project-{{ project.project_id ***REMOVED******REMOVED***" class="container center-align z-depth-3 #ff8a65 deep-orange lighten-2">
+    {% for project in PROJECTS %}
+    <!--Projects are contained inside container divs with ids of "project-{project-id}"-->
+    <div id="project-{{ project.project_id }}" class="container center-align z-depth-3 #ff8a65 deep-orange lighten-2">
         <br>
 
         <div class="col s12 m7 container">
@@ -40,30 +40,30 @@
                 <div class="card-stacked">
                     <div class="card-content">
                         <!--Project Title-->
-                        <h3>{{ project.title ***REMOVED******REMOVED***</h3>
+                        <h3>{{ project.title }}</h3>
 
                         <!--Project Mentor-->
-                        <h4>Mentor: {{ project.mentor_name ***REMOVED******REMOVED***</h4>
+                        <h4>Mentor: {{ project.mentor_name }}</h4>
 
                         <!--Project Description-->
-                        <p><b>Description:</b> {{ project.description ***REMOVED******REMOVED***</p>
+                        <p><b>Description:</b> {{ project.description }}</p>
 
                         <!--Learning outcomes list-->
                         <h5>Learning Outcomes: </h5>
 
                         <ul class="collection">
-                            {% for learning_outcome in project.learning_outcomes %***REMOVED***
-                            <li class="collection-item">{{ learning_outcome ***REMOVED******REMOVED***</li>
-                            {% endfor %***REMOVED***
+                            {% for learning_outcome in project.learning_outcomes %}
+                            <li class="collection-item">{{ learning_outcome }}</li>
+                            {% endfor %}
                         </ul>
 
                         <!--List of requirments on undertaking the project in question-->
                         <h5>Requirements: </h5>
 
                         <ul class="collection">
-                            {% for requirement in project.requirements %***REMOVED***
-                            <li class="collection-item">{{ requirement ***REMOVED******REMOVED***</li>
-                            {% endfor %***REMOVED***
+                            {% for requirement in project.requirements %}
+                            <li class="collection-item">{{ requirement }}</li>
+                            {% endfor %}
                         </ul>
 
                     </div>
@@ -78,7 +78,7 @@
 
                 <!--Form for applying the project-->
                 <div class="card-reveal">
-                    <span class="card-title grey-text text-darken-4">Application For {{ project.title ***REMOVED******REMOVED*** Project<i class="material-icons right">close</i></span>
+                    <span class="card-title grey-text text-darken-4">Application For {{ project.title }} Project<i class="material-icons right">close</i></span>
                     <p>Great to see you're interested in this project. Try to be as descritive as possible in the cover letter. i.e Tell us what course you're studying and what year you're in, why you're interested in this project, and what your experience is.</p>
                     <p>P.S. Don't be intimidated if you feel that you don't have any experience. We were all there once. :)</p>
                     <p>Please fill out this form.</p>
@@ -88,32 +88,32 @@
 
                             <div class="row">
                                 <div class="input-field col s6">
-                                    <input id="app-first-name-{{ project.project_id ***REMOVED******REMOVED***" name="app_first_name" type="text" class="validate">
-                                    <label for="app-first-name-{{ project.project_id ***REMOVED******REMOVED***">First Name</label>
+                                    <input id="app-first-name-{{ project.project_id }}" name="app_first_name" type="text" class="validate">
+                                    <label for="app-first-name-{{ project.project_id }}">First Name</label>
                                 </div>
                                 <div class="input-field col s6">
-                                    <input id="app-last-name-{{ project.project_id ***REMOVED******REMOVED***" name="app_last_name" type="text" class="validate">
-                                    <label for="mentor-last-name-{{ project.project_id ***REMOVED******REMOVED***">Last Name</label>
+                                    <input id="app-last-name-{{ project.project_id }}" name="app_last_name" type="text" class="validate">
+                                    <label for="mentor-last-name-{{ project.project_id }}">Last Name</label>
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <input id="app-email-{{ project.project_id ***REMOVED******REMOVED***" name="app_email" type="email" class="validate">
-                                    <label for="mentor-email-{{ project.project_id ***REMOVED******REMOVED***">Email</label>
+                                    <input id="app-email-{{ project.project_id }}" name="app_email" type="email" class="validate">
+                                    <label for="mentor-email-{{ project.project_id }}">Email</label>
                                 </div>
                             </div>
 
                             <div class="row" hidden>
                                 <div class="input-field col s12">
-                                    <input name="project_id" type="text" class="validate" value="{{ project.project_id ***REMOVED******REMOVED***">
+                                    <input name="project_id" type="text" class="validate" value="{{ project.project_id }}">
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <textarea id="cover-letter-{{ project.project_id ***REMOVED******REMOVED***" name="cover_letter" class="materialize-textarea" data-length="500"></textarea>
-                                    <label for="cover-letter-{{ project.project_id ***REMOVED******REMOVED***">Cover Letter</label>
+                                    <textarea id="cover-letter-{{ project.project_id }}" name="cover_letter" class="materialize-textarea" data-length="500"></textarea>
+                                    <label for="cover-letter-{{ project.project_id }}">Cover Letter</label>
                                 </div>
                             </div>
 
@@ -131,7 +131,7 @@
         <br>
     </div>
     <br>
-    {% endfor %***REMOVED***
+    {% endfor %}
 
     <!--Start of netsoc_mentorship section-->
     <div id="mentorship-title" class="container center-align z-depth-3 #ff8a65 deep-orange lighten-2">
@@ -189,4 +189,4 @@
         </div>
         <br>
     </div>
-{% endblock %***REMOVED***
+{% endblock %}
