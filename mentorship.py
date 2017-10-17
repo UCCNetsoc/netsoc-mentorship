@@ -1,4 +1,4 @@
-import config as config
+import config
 from flask import Flask
 from flask import render_template, request
 from projects import Projects_Factory

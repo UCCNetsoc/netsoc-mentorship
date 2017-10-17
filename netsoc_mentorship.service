@@ -1,0 +1,11 @@
+[Unit]
+Description=Netsoc Mentorship Service
+After=multi-user.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3.5 -m /netsoc/tools/netsoc_mentorship >> /netsoc/tools/netsoc_mentorship/netsoc_mentorship.log
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
