@@ -1,192 +1,228 @@
 {% extends "base.html" %}
 {% block body %}
     {{ super() }}
-    <div class="row valign-wrapper">
-        <div id="banner" class="container z-depth-3 #ff8a65 deep-orange lighten-2">
-            <!--Banner with site description and Netsoc Logo-->
-            <img class="container-item col s12 m12 l5" src="{{ url_for('static', filename='assets/icon_white.png') }}">
-            <div class="container-item col s12 m12 l7">
-                <div class="card">
-                    <div class="card-content black-text">
-                        <span class="card-title flow-text">Mentorship/Projects</span>
-                        <p class="flow-text">Netsoc is looking to train some up and coming devoplers. We want to give you actual projects that will be deployed for people to use, and in the process, teach you how to develop. If any of these projects interest you, feel free to apply.</p>
-                        <br>
-                        <p class="flow-text">Each Project will be assigned a project mentor that will guide students through development. If you feel that you have an interesting project in mind, and would like to be a mentor make sure to send us a mentorship application! :)</p>
-                    </div>
 
-                    <div class="card-action container center-align">
-                        <a href="#projects-title" class="container-item">Go To Projects</a>
-                    </div>
-                    <div class="card-action container center-align">
-                        <a href="#mentorship-title" class="container-item">Apply For Mentorship</a>
-                    </div>
-              </div>
-            </div>
+
+    <div class="parallax-container">
+      <div class="parallax">
+           <img height="200%"
+                style="display: block; transform: translate3d(-50%, 201px, 0px);"
+                src="{{ url_for('static', filename='assets/sky1.jpg') }}">
+      </div>
+    </div>
+
+    <div class="section white black-text">
+
+        <div class="row container">
+          <h2 class="header">Mentorship</h2>
         </div>
-    </div>
 
-    <!--Start of projects section-->
-    <div id="projects-title" class="container center-align z-depth-3 #ff8a65 deep-orange lighten-2">
-        <h1 class="white-text">Projects</h1>
-    </div>
-
-    {% for project in PROJECTS %}
-    <!--Projects are contained inside container divs with ids of "project-{project-id}"-->
-    <div id="project-{{ project.project_id }}" class="container center-align z-depth-3 #ff8a65 deep-orange lighten-2">
-        <br>
-
-        <div class="col s12 m7 container">
-            <div class="card horizontal">
-                <div class="card-stacked">
-                    <div class="card-content">
-                        <!--Project Title-->
-                        <h3>{{ project.title }}</h3>
-
-                        <!--Project Mentor-->
-                        <h4>Mentor: {{ project.mentor_name }}</h4>
-
-                        <!--Project Description-->
-                        <p><b>Description:</b> {{ project.description }}</p>
-
-                        <!--Learning outcomes list-->
-                        <h5>Learning Outcomes: </h5>
-
-                        <ul class="collection">
-                            {% for learning_outcome in project.learning_outcomes %}
-                            <li class="collection-item">{{ learning_outcome }}</li>
-                            {% endfor %}
-                        </ul>
-
-                        <!--List of requirments on undertaking the project in question-->
-                        <h5>Requirements: </h5>
-
-                        <ul class="collection">
-                            {% for requirement in project.requirements %}
-                            <li class="collection-item">{{ requirement }}</li>
-                            {% endfor %}
-                        </ul>
-
-                    </div>
-
-                    <!--Applying to this project should reveal it's application card-->
-                    <div class="card-content">
-                        <span class="activator">
-                            <a class="waves-effect waves-light btn-large activator cyan lighten-2">Apply</a>
-                        </span>
-                    </div>
+        <div class="row container">
+            <div class="container-item col s12 m12 l12">
+                <div class="card-content">
+                    <span class="card-title flow-text"><b>About</b></span>
+                    <p class="flow-text">Netsoc is looking to train you up-and-coming developers. We want to give you actual projects that will be deployed for people to use, and in the process, teach you how to develop. If any of these projects interest you, feel free to apply.</p>
+                    <br>
+                    <p class="flow-text">Each Project will be assigned a project mentor that will guide students through development. If you feel that you have an interesting project in mind, and would like to be a mentor make sure to send us a mentorship application! :)</p>
                 </div>
 
-                <!--Form for applying the project-->
-                <div class="card-reveal">
-                    <span class="card-title grey-text text-darken-4">Application For {{ project.title }} Project<i class="material-icons right">close</i></span>
-                    <p>Great to see you're interested in this project. Try to be as descritive as possible in the cover letter. i.e Tell us what course you're studying and what year you're in, why you're interested in this project, and what your experience is.</p>
-                    <p>P.S. Don't be intimidated if you feel that you don't have any experience. We were all there once. :)</p>
-                    <p>Please fill out this form.</p>
+                <div class="row container right-align">
+                    <div class="container-item col s6 m6 l6">
+                        <a href="#projects" class="#ff8a65 deep-orange lighten-2 waves-effect waves-light btn-large">Projects</a>
+                    </div>
+                    <div class="container-item col s6 m6 l6">
+                        <a href="#mentorship" class="#ff8a65 deep-orange lighten-2 waves-effect waves-light btn-large">Mentorship</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="parallax-container">
+      <div class="parallax">
+           <img height="200%"
+                style="display: block; transform: translate3d(-50%, 201px, 0px);"
+                src="{{ url_for('static', filename='assets/sky2.jpg') }}">
+      </div>
+    </div>
+
+     <div class="section black black-text">
+
+         <!--Projects are contained inside container divs with ids of "project-{project-id}"-->
+        <div id="projects" class="row flex center-align z-depth-3 #ff8a65 black">
+            {% for project in PROJECTS %}
+            <div id="project-{{ project.project_id }}" class="col s12 m6 l4 container">
+                <div class="card horizontal">
+                    <div class="card-stacked">
+                        <div class="card-content">
+                        <!--Project Title-->
+                            <h3>{{ project.title }}</h3>
+
+                            <!--Project Mentor-->
+                            <h4>Mentor: {{ project.mentor_name }}</h4>
+
+                            <!--Project Description-->
+                            <p><b>Description:</b> {{ project.description }}</p>
+
+                            <!--Learning outcomes list-->
+                            <h5>Learning Outcomes: </h5>
+
+                            <ul class="collection">
+                                {% for learning_outcome in project.learning_outcomes %}
+                                <li class="collection-item">{{ learning_outcome }}</li>
+                                {% endfor %}
+                            </ul>
+
+                            <!--List of requirments on undertaking the project in question-->
+                            <h5>Requirements: </h5>
+
+                            <ul class="collection">
+                                {% for requirement in project.requirements %}
+                                <li class="collection-item">{{ requirement }}</li>
+                                {% endfor %}
+                            </ul>
+
+                        </div>
+
+                        <!--Applying to this project should reveal it's application card-->
+                        <div class="card-content">
+                            <span class="activator">
+                                <a class="waves-effect waves-light btn-large activator #ff8a65 deep-orange lighten-2">Apply</a>
+                            </span>
+                        </div>
+                    </div>
+
+                    <!--Form for applying the project-->
+                    <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4">Application For {{ project.title }} Project<i class="material-icons right">close</i></span>
+                        <p>Great to see you're interested in this project. Try to be as descritive as possible in the cover letter. i.e Tell us what course you're studying and what year you're in, why you're interested in this project, and what your experience is.</p>
+                        <p>P.S. Don't be intimidated if you feel that you don't have any experience. We were all there once. :)</p>
+                        <p>Please fill out this form.</p>
+
+                        <div class="row">
+                            <form class="container col s12" action="/project-proposal" method="POST">
+
+                                <div class="row">
+                                    <div class="input-field col s6">
+                                        <input id="app-first-name-{{ project.project_id }}" name="app_first_name" type="text" class="validate" required>
+                                        <label for="app-first-name-{{ project.project_id }}">First Name</label>
+                                    </div>
+                                    <div class="input-field col s6">
+                                        <input id="app-last-name-{{ project.project_id }}" name="app_last_name" type="text" class="validate" required>
+                                        <label for="mentor-last-name-{{ project.project_id }}">Last Name</label>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <input id="app-email-{{ project.project_id }}" name="app_email" type="email" class="validate" required>
+                                        <label for="mentor-email-{{ project.project_id }}">Email</label>
+                                    </div>
+                                </div>
+
+                                <div class="row" hidden>
+                                    <div class="input-field col s12">
+                                        <input name="project_id" type="text" class="validate" value="{{ project.project_id }}">
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <textarea id="cover-letter-{{ project.project_id }}" name="cover_letter" class="materialize-textarea" data-length="500" required></textarea>
+                                        <label for="cover-letter-{{ project.project_id }}">Cover Letter</label>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                      <button class="btn waves-effect waves-light #ff8a65 deep-orange lighten-2" type="submit" name="action">Submit
+                                          <i class="material-icons right">send</i>
+                                      </button>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+    <div class="parallax-container">
+      <div class="parallax">
+           <img height="200%"
+                style="display: block; transform: translate3d(-50%, 201px, 0px);"
+                src="{{ url_for('static', filename='assets/sky3.jpg') }}">
+      </div>
+    </div>
+
+    <!--Start of netsoc_mentorship section-->
+    <div id="mentorship" class="section white black-text">
+
+            <div class="row container">
+              <h2 class="header">Mentorship Application</h2>
+            </div>
+             <!--Form for submitting a netsoc_mentorship proposal-->
+
+            <div id="mentorship-application" class="container white black-text">
+                <br>
+                <h5 class="black-text">If you are interested in mentoring and have a project in mind, please fill out this form. We will get in touch with you as soon as possible</h5>
+                <br>
+                <div class="col s12 m7 container white">
 
                     <div class="row">
-                        <form class="container col s12" action="/project-proposal" method="POST">
-
+                        <form class="col s12" action="/mentorship-proposal" method="POST">
                             <div class="row">
                                 <div class="input-field col s6">
-                                    <input id="app-first-name-{{ project.project_id }}" name="app_first_name" type="text" class="validate">
-                                    <label for="app-first-name-{{ project.project_id }}">First Name</label>
+                                    <input id="mentor-first-name" name="mentor_first_name" type="text" class="validate" required>
+                                    <label for="mentor-first-name">First Name</label>
                                 </div>
                                 <div class="input-field col s6">
-                                    <input id="app-last-name-{{ project.project_id }}" name="app_last_name" type="text" class="validate">
-                                    <label for="mentor-last-name-{{ project.project_id }}">Last Name</label>
+                                    <input id="mentor-last-name" name="mentor_last_name" type="text" class="validate" required>
+                                    <label for="mentor-last-name">Last Name</label>
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <input id="app-email-{{ project.project_id }}" name="app_email" type="email" class="validate">
-                                    <label for="mentor-email-{{ project.project_id }}">Email</label>
-                                </div>
-                            </div>
-
-                            <div class="row" hidden>
-                                <div class="input-field col s12">
-                                    <input name="project_id" type="text" class="validate" value="{{ project.project_id }}">
+                                    <input id="mentor-email" name="mentor_email" type="email" class="validate" required>
+                                    <label for="mentor-email">Email</label>
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <textarea id="cover-letter-{{ project.project_id }}" name="cover_letter" class="materialize-textarea" data-length="500"></textarea>
-                                    <label for="cover-letter-{{ project.project_id }}">Cover Letter</label>
+                                    <input id="mentor-project-title" name="mentor_project_title" type="text" class="validate" required>
+                                    <label for="mentor-project-title">Project Title</label>
                                 </div>
                             </div>
 
                             <div class="row">
-                                  <button class="btn waves-effect waves-light cyan lighten-2" type="submit" name="action">Submit
+                                <div class="input-field col s12">
+                                    <textarea id="mentor-project-description" name="mentor_project_description" class="materialize-textarea" data-length="300" required></textarea>
+                                    <label for="mentor-project-description">Project Description</label>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                  <button class="btn waves-effect waves-light #ff8a65 deep-orange lighten-2" type="submit" name="action">Submit
                                       <i class="material-icons right">send</i>
                                   </button>
                             </div>
-
                         </form>
                     </div>
                 </div>
+                <br>
             </div>
+
         </div>
-        <br>
-    </div>
-    <br>
-    {% endfor %}
 
-    <!--Start of netsoc_mentorship section-->
-    <div id="mentorship-title" class="container center-align z-depth-3 #ff8a65 deep-orange lighten-2">
-        <h1 class="white-text">Mentorship</h1>
     </div>
 
-     <!--Form for submitting a netsoc_mentorship proposal-->
-    <div id="mentorship-application" class="container center-align z-depth-3 #ff8a65 deep-orange lighten-2">
-        <br>
-        <h5 class="center-align white-text">If you are interested in mentoring and have a project in mind, please fill out this form. We will get in touch with you as soon as possible</h5>
-        <br>
-        <div class="col s12 m7 container white z-depth-3">
-
-            <div class="row">
-                <form class="col s12" action="/mentorship-proposal" method="POST">
-                    <div class="row">
-                        <div class="input-field col s6">
-                            <input id="mentor-first-name" name="mentor_first_name" type="text" class="validate">
-                            <label for="mentor-first-name">First Name</label>
-                        </div>
-                        <div class="input-field col s6">
-                            <input id="mentor-last-name" name="mentor_last_name" type="text" class="validate">
-                            <label for="mentor-last-name">Last Name</label>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input id="mentor-email" name="mentor_email" type="email" class="validate">
-                            <label for="mentor-email">Email</label>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input id="mentor-project-title" name="mentor_project_title" type="text" class="validate">
-                            <label for="mentor-project-title">Project Title</label>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <textarea id="mentor-project-description" name="mentor_project_description" class="materialize-textarea" data-length="300"></textarea>
-                            <label for="mentor-project-description">Project Description</label>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                          <button class="btn waves-effect waves-light cyan lighten-2" type="submit" name="action">Submit
-                              <i class="material-icons right">send</i>
-                          </button>
-                    </div>
-                </form>
-            </div>
-        </div>
-        <br>
-    </div>
 {% endblock %}
