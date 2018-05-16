@@ -126,6 +126,7 @@ class Projects_Factory:
         :return:
         """
         self._read_directory()
+        print(self._filenames)
         for filename in self._filenames:
             project = self._make_project(self._read_project(filename))
             self.projects.append(
@@ -151,7 +152,7 @@ def test():
     :return:
     """
     project_factory = Projects_Factory(config.projects_directory)
-    projects = project_factory.get_projects()
+    projects = project_factory.get_projects_as_dicts()
     print("Factory: ", str(project_factory), "\n",
           "Projects List: ", projects, "\n",
           "Project: ", str(projects[0][1]),"\n",
