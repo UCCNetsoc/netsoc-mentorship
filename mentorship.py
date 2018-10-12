@@ -46,7 +46,16 @@ def projects_proposal():
                                          message_body=body,
                                          recipients=[project.get_mentor_email()])
 
-    if email_sent:
+    subject_confirmation, body_confirmation = email_client.create_mentorship_confirmation_email(first_name=form["app_first_name"],
+                                                                  last_name=form["app_last_name"],
+                                                                  title=project.get_project_information()[
+                                                                      "title"])
+
+    email_sent_applicant = email_client.send_email(subject=subject_confirmation,
+                                         message_body=body_confirmation,
+                                         recipients=[form["app_email"]])
+
+    if email_sent and email_sent_applicant:
         response_message = "Thank you for your application. We will be in touch with you shortly."
     else:
         response_message = "We apologise as we seem to be having some technical difficulties. Please try again later."

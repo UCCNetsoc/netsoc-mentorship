@@ -59,6 +59,26 @@ class Email_Client:
                 """.format(first_name, last_name, applicants_email, title, description)
         return subject, message_body
 
+    def create_mentorship_confirmation_email(self, first_name, last_name, title):
+        """
+        Creates a netsoc_mentorship confirmation email
+        :param first_name:
+        :param last_name:
+        :param title:
+        :param description:
+        :return:
+        """
+        subject = "Mentorship Application: {}".format(title)
+        message_body = """
+                Dear {} {},\n
+                Thank you for applying for\n
+                {}\n
+                We will be in touch shortly.\n
+                Thanks,\n
+                UCC Networking and Gaming Society
+                """.format(first_name, last_name, title)
+        return subject, message_body
+
     def send_email(self, subject, message_body, recipients=[]):
         """
         Sends an email using the send grid API
