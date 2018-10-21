@@ -2,15 +2,6 @@
 {% block body %}
     {{ super() }}
 
-
-    <div class="parallax-container">
-      <div class="parallax">
-           <img height="200%"
-                style="display: block; transform: translate3d(-50%, 201px, 0px);"
-                src="{{ url_for('static', filename='assets/sky1.jpg') }}">
-      </div>
-    </div>
-
     <div class="section white black-text">
 
         <div class="row container">
@@ -39,19 +30,10 @@
 
     </div>
 
-
-    <div class="parallax-container">
-      <div class="parallax">
-           <img height="200%"
-                style="display: block; transform: translate3d(-50%, 201px, 0px);"
-                src="{{ url_for('static', filename='assets/sky2.jpg') }}">
-      </div>
-    </div>
-
-     <div class="section black black-text">
+     <div class="section white black-text">
 
          <!--Projects are contained inside container divs with ids of "project-{project-id}"-->
-        <div id="projects" class="row flex center-align z-depth-3 #ff8a65 black">
+        <div id="projects" class="row flex center-align z-depth-3 #ff8a65 teal">
             {% for project in PROJECTS %}
             <div id="project-{{ project.project_id }}" class="col s12 m6 l4 container">
                 <div class="card horizontal">
@@ -131,7 +113,7 @@
                                 <div class="row">
                                     <div class="input-field col s12">
                                         <textarea id="cover-letter-{{ project.project_id }}" name="cover_letter" class="materialize-textarea" data-length="500" required></textarea>
-                                        <label for="cover-letter-{{ project.project_id }}">Cover Letter</label>
+                                        <label for="cover-letter-{{ project.project_id }}">Why You're Interested</label>
                                     </div>
                                 </div>
 
@@ -152,14 +134,6 @@
 
         </div>
 
-    </div>
-
-    <div class="parallax-container">
-      <div class="parallax">
-           <img height="200%"
-                style="display: block; transform: translate3d(-50%, 201px, 0px);"
-                src="{{ url_for('static', filename='assets/sky3.jpg') }}">
-      </div>
     </div>
 
     <!--Start of netsoc_mentorship section-->
